@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/redacao.css">
-    <link rel="icon" href="rept_logo-removebg-preview (1).png" type="image/png">
+       <link rel="icon" href="rept_logo-removebg-preview (1).png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="dark-theme">
- 
 <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -98,7 +97,7 @@
     <main class="main-content">
         <header class="main-header">
             <div class="header-left">
-                <h1>Redação</h1>
+                <h1>Redação ENEM — Treine e evolua sua escrita 🖋️</h1>
             </div>
             <div class="header-right">
                 <div class="user-profile">
@@ -106,23 +105,178 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Leonardo Quispe Iola</span>
+                        <span class="user-name">Yasmin Jhocelin</span>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="page-content">
-            <div class="coming-soon">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-pen"></i>
+        <div class="redacao-content">
+            <!-- Temas Recentes do ENEM -->
+            <section class="temas-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-lightbulb"></i>
+                        Temas Recentes do ENEM
+                    </h2>
                 </div>
-                <h2>Módulo de Redação em Desenvolvimento</h2>
-                <p>Esta seção estará disponível em breve com correções automáticas e dicas de redação.</p>
-            </div>
+                <div class="temas-grid">
+                    <div class="tema-card" data-tema="educacao-inclusiva">
+                        <div class="tema-year">2023</div>
+                        <h3>Desafios da educação inclusiva no Brasil</h3>
+                        <p>Explore as dificuldades e soluções para uma educação verdadeiramente inclusiva.</p>
+                        <button class="btn-ver-proposta">Ver Proposta</button>
+                    </div>
+                    <div class="tema-card" data-tema="redes-sociais">
+                        <div class="tema-year">2022</div>
+                        <h3>O impacto das redes sociais na juventude</h3>
+                        <p>Analise como as redes sociais influenciam o comportamento dos jovens.</p>
+                        <button class="btn-ver-proposta">Ver Proposta</button>
+                    </div>
+                    <div class="tema-card" data-tema="meio-ambiente">
+                        <div class="tema-year">2022</div>
+                        <h3>Desafios para o enfrentamento da invisibilidade do trabalho de cuidado</h3>
+                        <p>Discuta a valorização do trabalho doméstico e de cuidado na sociedade.</p>
+                        <button class="btn-ver-proposta">Ver Proposta</button>
+                    </div>
+                    <div class="tema-card" data-tema="democratizacao">
+                        <div class="tema-year">2021</div>
+                        <h3>Invisibilidade e registro civil: garantia de acesso à cidadania</h3>
+                        <p>Aborde a importância do registro civil para o exercício da cidadania.</p>
+                        <button class="btn-ver-proposta">Ver Proposta</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Editor de Redação -->
+            <section class="editor-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-edit"></i>
+                        Pratique sua Redação
+                    </h2>
+                    <div class="editor-actions">
+                        <button id="load-redacao" class="btn-secondary">
+                            <i class="fas fa-folder-open"></i>
+                            Carregar
+                        </button>
+                        <button id="save-redacao" class="btn-primary">
+                            <i class="fas fa-save"></i>
+                            Salvar Redação
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="editor-container">
+                    <div class="editor-toolbar">
+                        <div class="toolbar-left">
+                            <span class="tema-selecionado" id="tema-atual">Tema: Selecione um tema acima</span>
+                        </div>
+                        <div class="toolbar-right">
+                            <span class="word-counter">
+                                <span id="word-count">0</span> palavras
+                            </span>
+                            <span class="char-counter">
+                                <span id="char-count">0</span> caracteres
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <textarea 
+                        id="redacao-editor" 
+                        placeholder="Comece a escrever sua redação aqui... Lembre-se de estruturar bem: introdução, desenvolvimento e conclusão."
+                        maxlength="3000"
+                    ></textarea>
+                    
+                    <div class="editor-footer">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text">Mínimo recomendado: 200 palavras</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dicas de Escrita -->
+            <section class="dicas-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-star"></i>
+                        Dicas de Escrita
+                    </h2>
+                </div>
+                <div class="dicas-grid">
+                    <div class="dica-card">
+                        <div class="dica-icon">
+                            <i class="fas fa-list-ol"></i>
+                        </div>
+                        <h4>Estrutura Clara</h4>
+                        <p>Organize sua redação em introdução, desenvolvimento (2-3 parágrafos) e conclusão com proposta de intervenção.</p>
+                    </div>
+                    <div class="dica-card">
+                        <div class="dica-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h4>Use Conectivos</h4>
+                        <p>Conecte suas ideias com palavras como "portanto", "além disso", "por outro lado" para dar fluidez ao texto.</p>
+                    </div>
+                    <div class="dica-card">
+                        <div class="dica-icon">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <h4>Revise Sempre</h4>
+                        <p>Verifique gramática, ortografia e coerência. Uma boa revisão pode aumentar significativamente sua nota.</p>
+                    </div>
+                    <div class="dica-card">
+                        <div class="dica-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4>Foque no Tema</h4>
+                        <p>Mantenha-se sempre dentro do tema proposto. Fugir do tema pode zerar sua redação.</p>
+                    </div>
+                    <div class="dica-card">
+                        <div class="dica-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Argumente Bem</h4>
+                        <p>Use dados, exemplos e referências para fundamentar seus argumentos e tornar o texto mais convincente.</p>
+                    </div>
+                    <div class="dica-card">
+                        <div class="dica-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Proposta Viável</h4>
+                        <p>Sua conclusão deve apresentar uma proposta de intervenção detalhada, viável e respeitosa aos direitos humanos.</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
+    <!-- Modal para Propostas -->
+    <div id="proposta-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Proposta de Redação</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Conteúdo será inserido dinamicamente -->
+            </div>
+            <div class="modal-footer">
+                <button id="usar-tema" class="btn-primary">Usar este Tema</button>
+                <button class="modal-close btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de Notificação -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Redação salva com sucesso!</span>
+    </div>
+
     <script src="js/theme.js"></script>
+    <script src="js/redacao.js"></script>
 </body>
 </html>
