@@ -541,7 +541,7 @@
     max-width: 1000px;
     overflow: hidden;
     border-radius: 18px;
-    background: linear-gradient(135deg, #9333ea, #3b82f6);
+    background: linear-gradient(135deg, #9333ea, #9333ea);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
 }
 
