@@ -1,0 +1,138 @@
+/* Ranking Page Specific Styles */
+.ranking-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.ranking-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ranking-subtitle {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+.ranking-filters {
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-tab {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.ranking-list {
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.ranking-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border-color: var(--primary-color);
+}
+
+.ranking-position {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  min-width: 40px;
+  text-align: center;
+}
+
+.ranking-position.top-3 {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.student-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.student-info {
+  flex: 1;
+}
+
+.student-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.student-school {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.student-score {
+  text-align: right;
+}
+
+.score-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.score-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}

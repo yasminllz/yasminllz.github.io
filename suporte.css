@@ -1,0 +1,111 @@
+/* Suporte Page Specific Styles */
+.support-hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.support-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.support-subtitle {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+.support-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.support-card {
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.support-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  border-color: var(--primary-color);
+}
+
+.support-card-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.support-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.support-card-description {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.faq-section {
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  display: none;
+  padding-top: 0.5rem;
+}
+
+.faq-answer.active {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.faq-toggle {
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.faq-toggle.active {
+  transform: rotate(180deg);
+}

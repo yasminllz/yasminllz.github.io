@@ -1,0 +1,300 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPT - Plataforma Educacional</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>REPT</h2>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="enem.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        <span>ENEM</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="questoes.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Questões</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="redacao.html" class="nav-link">
+                        <i class="fas fa-pen"></i>
+                        <span>Redação</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="desempenho.html" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Desempenho</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="ranking.html" class="nav-link">
+                        <i class="fas fa-trophy"></i>
+                        <span>Ranking</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="calendario.html" class="nav-link">
+                        <i class="fas fa-calendar"></i>
+                        <span>Calendário</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="suporte.html" class="nav-link">
+                        <i class="fas fa-headset"></i>
+                        <span>Suporte</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="configuracoes.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-left">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Yasmin Jhocelin</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Carousel Section -->
+            <section class="carousel-section">
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Estudante">
+                            </div>
+                            <div class="slide-text">
+                                <h2>Contagem regressiva:</h2>
+                                <h1>70 dias.</h1>
+                                <h2>Entrou passou!</h2>
+                                <button class="cta-button">MARATONA 70 DIAS</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Grid -->
+            <div class="main-grid">
+                <!-- Study Schedule -->
+                <section class="study-schedule">
+                    <div class="section-header">
+                        <h3>
+                            <i class="fas fa-clock"></i>
+                            Cronogramas de Estudo
+                        </h3>
+                    </div>
+                    <div class="schedule-cards">
+                        <div class="schedule-card">
+                            <div class="schedule-time">
+                                <span>08:00 - 10:00</span>
+                            </div>
+                            <div class="schedule-subject">
+                                <h4>Matemática</h4>
+                                <p>Funções e Logaritmos</p>
+                            </div>
+                            <div class="schedule-status">
+                                <i class="fas fa-check-circle completed"></i>
+                            </div>
+                        </div>
+                        <div class="schedule-card">
+                            <div class="schedule-time">
+                                <span>10:30 - 12:00</span>
+                            </div>
+                            <div class="schedule-subject">
+                                <h4>Português</h4>
+                                <p>Interpretação de Texto</p>
+                            </div>
+                            <div class="schedule-status">
+                                <i class="fas fa-play-circle pending"></i>
+                            </div>
+                        </div>
+                        <div class="schedule-card">
+                            <div class="schedule-time">
+                                <span>14:00 - 16:00</span>
+                            </div>
+                            <div class="schedule-subject">
+                                <h4>Física</h4>
+                                <p>Mecânica Clássica</p>
+                            </div>
+                            <div class="schedule-status">
+                                <i class="fas fa-clock pending"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Statistics -->
+                <section class="statistics">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Progresso Geral</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <div class="stat-number">120</div>
+                            <div class="stat-label">Questões Resolvidas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Sequência de Dias</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+                <!-- Calendar -->
+                <section class="calendar-section">
+                    <div class="calendar-header">
+                        <button id="prev-month" class="calendar-nav">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h3 id="current-month">Julho</h3>
+                        <button id="next-month" class="calendar-nav">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-weekdays">
+                            <span>D</span>
+                            <span>S</span>
+                            <span>T</span>
+                            <span>Q</span>
+                            <span>Q</span>
+                            <span>S</span>
+                            <span>S</span>
+                        </div>
+                        <div class="calendar-days" id="calendar-days">
+                            <!-- Days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Events -->
+                <section class="events-section">
+                    <div class="section-header">
+                        <h3>Próximos eventos</h3>
+                    </div>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">08</span>
+                                <span class="event-month">JUL</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Universidade do Estado do Rio de Janeiro (UERJ)</h4>
+                                <p>1ª Fase / 2º Exame de Qualificação</p>
+                                <span class="event-time">08/09 - 00:00h</span>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">15</span>
+                                <span class="event-month">JUL</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Simulado ENEM</h4>
+                                <p>Prova Completa - Todas as Áreas</p>
+                                <span class="event-time">15/07 - 08:00h</span>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">22</span>
+                                <span class="event-month">JUL</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Workshop de Redação</h4>
+                                <p>Técnicas de Argumentação</p>
+                                <span class="event-time">22/07 - 14:00h</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <script src="js/theme.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/calendar.js"></script>
+</body>
+</html>
