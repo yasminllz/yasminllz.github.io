@@ -1,0 +1,12 @@
+# lista  =  [1,2,3,4,5,6]
+
+
+# l =  list(range(1,2000,10)) #  ------------> de 1 a 2000 pulando em 10 em 10
+# print(l)
+
+
+# escreva um programa que use a função range() para gerar os pares de 2 a 20 e, eseguida imprima cada numero 
+
+
+pares = list(range(0,20,2))
+print(pares)
