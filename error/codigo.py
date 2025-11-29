@@ -1,91 +1,67 @@
-import statistics
-from modulinhu import media1, moda1, mediana1, varianca1, desvio1
-
-empresa1 = [1000,6000,1200,8000,1400]
-empresa2 = [5000,4000,3000,2000,7000]
-empresa3 = [1200,1300,8000,3000,15000]
-empresa4 = [1400,1750,2000,4500,5900,7000]
-
-def hadle(lista, salarios):
-
-    print('EMPRESA', salarios)
-    print('----------------------------')
-    media1(lista)
-    mediana1(lista)
-    moda1(lista)
-    varianca1(lista)
-    desvio1(lista)
+import os
+import shutil
 
 
-hadle(empresa1, empresa1)  
-hadle(empresa2, empresa2)   
-hadle(empresa3, empresa3) 
-hadle(empresa4, empresa4) 
- 
- 
- 
- 
- 
- 
- 
- 
-#  ----------------------
- 
+# 1. Criar e ler um arquivo 
+
+# Cria um arquivo e escreve algo dentro
+with open('arquivo.txt', 'w') as arq:
+    arq.write("Olis criado pelo Python.")
+
+# Lê o arquivo criado
+with open('arquivo.txt', 'r') as arq:
+    print("Conteúdo do arquivo.txt:")
+    print(arq.read())
 
 
-def moda(lista):
-    moda = statistics.mode(lista)
-    print('moda', moda)
 
-def media(lista):
-    media = statistics.mean(lista)
-    print('media', media)
+# 2. Criar um diretório
 
-def mediana(lista):
-    mediana = statistics.median(lista)
-    print('mediana',mediana)
-
-def desvio(lista):
-    desvio = statistics.stdev(lista)
-    print("Desvio:", desvio) 
+if not os.path.exists('diretorio_exemplo'):
+    os.mkdir('diretorio_exemplo')
+    print("Diretório criado: diretorio_exemplo")
 
 
-def display():
-    print('Empresa 1')
-    empresa1 = [1000,6000,1200,8000,1400]
-    desvio(empresa1)
-    moda(empresa1)
-    mediana(empresa1)
-    media(empresa1) 
 
-    print('--------------------------')  
+# 3. Renomear um diretório
 
-    print('Empresa 2')
-    empresa2 = [5000,4000,3000,2000,7000]
-    desvio(empresa2)
-    moda(empresa2)
-    mediana(empresa2)
-    media(empresa2) 
+if os.path.exists('diretorio_exemplo'):
+    os.rename('diretorio_exemplo', 'diretorio_renomeado')
+    print("Diretório renomeado para: diretorio_renomeado")
 
-    print('--------------------------') 
 
-    print('Empresa 3')
-    empresa3 = [1200,1300,8000,3000,15000]
-    desvio(empresa3)
-    moda(empresa3)
-    mediana(empresa3)
-    media(empresa3) 
 
-    print('--------------------------')
+# 4. Listar arquivos em um diretório
 
-    print('Empresa 4')
-    empresa4 = [1400,1750,2000,4500,5900]
-    desvio(empresa4)
-    moda(empresa4)
-    mediana(empresa4)
-    media(empresa4) 
-    
-    print('--------------------------')        
-            
-    
-display()
+print("\nArquivos no diretório renomeado:")
+with os.scandir('diretorio_renomeado') as entrada:
+    for item in entrada:
+        print(item.name)
+
+
+
+# 5. Copiar arquivos ou diretórios
+
+# Copiar arquivo
+shutil.copy('arquivo.txt', 'diretorio_renomeado/arquivo_copiado.txt')
+print("\nArquivo copiado para diretorio_renomeado")
+
+# Copiar diretório inteiro
+if os.path.exists('diretorio_renomeado'):
+    if not os.path.exists('diretorio_copia'):
+        shutil.copytree('diretorio_renomeado', 'diretorio_copia')
+        print("Diretório copiado para: diretorio_copia")
+
+
+
+# 6. Remover arquivos/diretórios
+
+# Remove arquivo se existir
+if os.path.exists('arquivo.txt'):
+    os.remove('arquivo.txt')
+    print("arquivo.txt removido.")
+
+# Remove diretório recursivamente
+if os.path.exists('diretorio_copia'):
+    shutil.rmtree('diretorio_copia')
+    print("diretorio_copia removido.")
