@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <nav class="sidebar-nav">
+       <nav class="sidebar-nav">
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">
@@ -45,7 +45,7 @@
                         <span>Redação</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a href="desempenho.html" class="nav-link">
                         <i class="fas fa-chart-line"></i>
                         <span>Desempenho</span>
@@ -69,7 +69,7 @@
                         <span>Suporte</span>
                     </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a href="configuracoes.html" class="nav-link">
                         <i class="fas fa-cog"></i>
                         <span>Configurações</span>
@@ -98,7 +98,7 @@
     <main class="main-content">
         <header class="main-header">
             <div class="header-left">
-                <h1>Configurações</h1>
+                <h1>Desempenho — Sua Evolução 📊</h1>
             </div>
             <div class="header-right">
                 <div class="user-profile">
@@ -112,17 +112,335 @@
             </div>
         </header>
 
-        <div class="page-content">
-            <div class="coming-soon">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-cog"></i>
+        <div class="desempenho-content">
+            <!-- Hero Section -->
+            <section class="desempenho-hero">
+                <h2>Acompanhe sua Evolução</h2>
+                <p>Visualize seu progresso e identifique pontos de melhoria nos seus estudos</p>
+            </section>
+
+            <!-- Resumo do Desempenho -->
+            <section class="resumo-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-chart-bar"></i>
+                        Resumo do Desempenho
+                    </h3>
+                    <div class="periodo-selector">
+                        <button class="periodo-btn active" data-periodo="hoje">Hoje</button>
+                        <button class="periodo-btn" data-periodo="semana">7 dias</button>
+                        <button class="periodo-btn" data-periodo="mes">30 dias</button>
+                    </div>
                 </div>
-                <h2>Configurações em Desenvolvimento</h2>
-                <p>Esta seção estará disponível em breve com todas as configurações da plataforma.</p>
-            </div>
+                <div class="resumo-grid">
+                    <div class="resumo-card">
+                        <div class="resumo-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="resumo-info">
+                            <span class="resumo-number" id="taxa-acerto">85%</span>
+                            <span class="resumo-label">Taxa de Acerto</span>
+                        </div>
+                        <div class="resumo-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+5%</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="resumo-info">
+                            <span class="resumo-number" id="questoes-resolvidas">47</span>
+                            <span class="resumo-label">Questões Resolvidas</span>
+                        </div>
+                        <div class="resumo-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="resumo-info">
+                            <span class="resumo-number" id="tempo-estudado">3h 25m</span>
+                            <span class="resumo-label">Tempo Estudado</span>
+                        </div>
+                        <div class="resumo-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+45m</span>
+                        </div>
+                    </div>
+
+                    <div class="resumo-card">
+                        <div class="resumo-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="resumo-info">
+                            <span class="resumo-number" id="sequencia-dias">15</span>
+                            <span class="resumo-label">Dias Consecutivos</span>
+                        </div>
+                        <div class="resumo-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+1</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gráfico de Evolução -->
+            <section class="grafico-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-chart-line"></i>
+                        Evolução do Desempenho
+                    </h3>
+                    <div class="grafico-controls">
+                        <button class="grafico-btn active" data-tipo="acertos">Taxa de Acerto</button>
+                        <button class="grafico-btn" data-tipo="questoes">Questões/Dia</button>
+                        <button class="grafico-btn" data-tipo="tempo">Tempo/Dia</button>
+                    </div>
+                </div>
+                <div class="grafico-container">
+                    <canvas id="grafico-evolucao" width="800" height="400"></canvas>
+                </div>
+                <div class="grafico-legenda">
+                    <div class="legenda-item">
+                        <div class="legenda-cor" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));"></div>
+                        <span>Desempenho Atual</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-cor" style="background: rgba(147, 51, 234, 0.3);"></div>
+                        <span>Meta</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desempenho por Disciplina -->
+            <section class="disciplinas-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-graduation-cap"></i>
+                        Desempenho por Disciplina
+                    </h3>
+                </div>
+                <div class="disciplinas-grid">
+                    <div class="disciplina-card">
+                        <div class="disciplina-header">
+                            <div class="disciplina-icon matematica">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="disciplina-info">
+                                <h4>Matemática</h4>
+                                <span class="disciplina-acerto">78%</span>
+                            </div>
+                        </div>
+                        <div class="disciplina-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%;"></div>
+                            </div>
+                        </div>
+                        <div class="disciplina-stats">
+                            <span><i class="fas fa-check"></i> 23 acertos</span>
+                            <span><i class="fas fa-times"></i> 7 erros</span>
+                        </div>
+                    </div>
+
+                    <div class="disciplina-card">
+                        <div class="disciplina-header">
+                            <div class="disciplina-icon portugues">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="disciplina-info">
+                                <h4>Português</h4>
+                                <span class="disciplina-acerto">92%</span>
+                            </div>
+                        </div>
+                        <div class="disciplina-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div class="disciplina-stats">
+                            <span><i class="fas fa-check"></i> 35 acertos</span>
+                            <span><i class="fas fa-times"></i> 3 erros</span>
+                        </div>
+                    </div>
+
+                    <div class="disciplina-card">
+                        <div class="disciplina-header">
+                            <div class="disciplina-icon fisica">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="disciplina-info">
+                                <h4>Física</h4>
+                                <span class="disciplina-acerto">65%</span>
+                            </div>
+                        </div>
+                        <div class="disciplina-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="disciplina-stats">
+                            <span><i class="fas fa-check"></i> 13 acertos</span>
+                            <span><i class="fas fa-times"></i> 7 erros</span>
+                        </div>
+                    </div>
+
+                    <div class="disciplina-card">
+                        <div class="disciplina-header">
+                            <div class="disciplina-icon quimica">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="disciplina-info">
+                                <h4>Química</h4>
+                                <span class="disciplina-acerto">71%</span>
+                            </div>
+                        </div>
+                        <div class="disciplina-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 71%;"></div>
+                            </div>
+                        </div>
+                        <div class="disciplina-stats">
+                            <span><i class="fas fa-check"></i> 17 acertos</span>
+                            <span><i class="fas fa-times"></i> 7 erros</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Histórico de Estudos -->
+            <section class="historico-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-history"></i>
+                        Histórico de Estudos
+                    </h3>
+                    <div class="historico-filters">
+                        <select id="filtro-disciplina" class="filtro-select">
+                            <option value="todas">Todas as disciplinas</option>
+                            <option value="matematica">Matemática</option>
+                            <option value="portugues">Português</option>
+                            <option value="fisica">Física</option>
+                            <option value="quimica">Química</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="historico-container">
+                    <div class="historico-table">
+                        <div class="table-header">
+                            <div class="table-cell">Data</div>
+                            <div class="table-cell">Disciplina</div>
+                            <div class="table-cell">Questões</div>
+                            <div class="table-cell">Acertos</div>
+                            <div class="table-cell">Taxa</div>
+                            <div class="table-cell">Tempo</div>
+                        </div>
+                        <div class="table-body" id="historico-body">
+                            <!-- Dados serão inseridos dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sugestões Automáticas -->
+            <section class="sugestoes-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-lightbulb"></i>
+                        Sugestões para Melhorar
+                    </h3>
+                </div>
+                <div class="sugestoes-grid">
+                    <div class="sugestao-card prioridade-alta">
+                        <div class="sugestao-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="sugestao-content">
+                            <h4>Revisar Física</h4>
+                            <p>Sua taxa de acerto em Física está abaixo da média. Recomendamos focar em Mecânica e Eletricidade.</p>
+                            <div class="sugestao-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-target"></i>
+                                    65% de acerto
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-arrow-up"></i>
+                                    Meta: 80%
+                                </span>
+                            </div>
+                        </div>
+                        <button class="sugestao-btn">
+                            <i class="fas fa-play"></i>
+                            Praticar
+                        </button>
+                    </div>
+
+                    <div class="sugestao-card prioridade-media">
+                        <div class="sugestao-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="sugestao-content">
+                            <h4>Aumentar Ritmo</h4>
+                            <p>Você está resolvendo menos questões que o recomendado. Tente resolver pelo menos 50 questões por dia.</p>
+                            <div class="sugestao-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    35 questões/dia
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-arrow-up"></i>
+                                    Meta: 50/dia
+                                </span>
+                            </div>
+                        </div>
+                        <button class="sugestao-btn">
+                            <i class="fas fa-calendar-plus"></i>
+                            Planejar
+                        </button>
+                    </div>
+
+                    <div class="sugestao-card prioridade-baixa">
+                        <div class="sugestao-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="sugestao-content">
+                            <h4>Manter Português</h4>
+                            <p>Excelente desempenho em Português! Continue praticando para manter essa taxa de acerto.</p>
+                            <div class="sugestao-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    92% de acerto
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    Acima da meta
+                                </span>
+                            </div>
+                        </div>
+                        <button class="sugestao-btn">
+                            <i class="fas fa-check"></i>
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
+    <!-- Toast de Notificação -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Dados atualizados!</span>
+    </div>
+
+
     <script src="js/theme.js"></script>
+    <script src="js/desempenho.js"></script>
 </body>
 </html>
