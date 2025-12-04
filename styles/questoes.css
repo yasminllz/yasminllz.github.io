@@ -670,7 +670,7 @@
     }
 }
 
-@keyframes slideIn {
+@keyframes slideIn{
     from {
         opacity: 0;
         transform: translateY(-50px);
