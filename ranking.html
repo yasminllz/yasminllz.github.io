@@ -3,126 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking - REPT</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/sidebar.css">
-    <link rel="stylesheet" href="styles/ranking.css">
+    <title>Ranking — REPT</title>
     <link rel="icon" href="rept_logo-removebg-preview (1).png" type="image/png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/ranking.css">
 </head>
-<body class="dark-theme">
- 
-<!-- Sidebar -->
-    <aside class="sidebar">
+<body>
+    <div class="container">
+        <aside class="sidebar">
         <div class="sidebar-header">
 <img src="Captura_de_tela_2025-10-02_010620-removebg-preview.png" alt="" class="logo">
             </div>
         </div>
 
-        <nav class="sidebar-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="enem.html" class="nav-link">
-                        <i class="fas fa-book"></i>
-                        <span>ENEM</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="questoes.html" class="nav-link">
-                        <i class="fas fa-question-circle"></i>
-                        <span>Questões</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="redacao.html" class="nav-link">
-                        <i class="fas fa-pen"></i>
-                        <span>Redação</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="desempenho.html" class="nav-link">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Desempenho</span>
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a href="ranking.html" class="nav-link">
-                        <i class="fas fa-trophy"></i>
-                        <span>Ranking</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="calendario.html" class="nav-link">
-                        <i class="fas fa-calendar"></i>
-                        <span>Calendário</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="suporte.html" class="nav-link">
-                        <i class="fas fa-headset"></i>
-                        <span>Suporte</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="configuracoes.html" class="nav-link">
-                        <i class="fas fa-cog"></i>
-                        <span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="enem.html" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span>ENEM</span>
+                </a>
+                <a href="questoes.html" class="nav-item">
+                    <span class="nav-icon">❓</span>
+                    <span>Questões</span>
+                </a>
+                <a href="redacao.html" class="nav-item">
+                    <span class="nav-icon">✏️</span>
+                    <span>Redação</span>
+                </a>
+                <a href="desempenho.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Desempenho</span>
+                </a>
+                <a href="ranking.html" class="nav-item active">
+                    <span class="nav-icon">🏆</span>
+                    <span>Ranking</span>
+                </a>
+                <a href="calendario.html" class="nav-item">
+                    <span class="nav-icon">📅</span>
+                    <span>Calendário</span>
+                </a>
+                <a href="suporte.html" class="nav-item">
+                    <span class="nav-icon">🎧</span>
+                    <span>Suporte</span>
+                </a>
+                <a href="configuracoes.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Configurações</span>
+                </a>
+            </nav>
 
-        <div class="sidebar-footer">
-            <div class="theme-toggle">
-                <button id="theme-toggle" class="theme-btn">
-                    <i class="fas fa-moon"></i>
+            <div class="sidebar-footer">
+                <button class="dark-mode-toggle">
+                    <span>🌙</span>
                     <span>Dark Mode</span>
                 </button>
-            </div>
-            <div class="nav-item">
-                <a href="#" class="nav-link logout">
-                    <i class="fas fa-sign-out-alt"></i>
+                <button class="logout-btn">
+                    <span>🚪</span>
                     <span>Sair</span>
-                </a>
+                </button>
             </div>
-        </div>
-    </aside>
+        </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <header class="main-header">
-            <div class="header-left">
-                <h1>Ranking</h1>
-            </div>
-            <div class="header-right">
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Ranking — Compare seu Desempenho 🏆</h1>
                 <div class="user-profile">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                    <div class="user-avatar">👤</div>
+                    <span class="user-name" id="currentUserName">Estudante</span>
+                </div>
+            </header>
+
+            <section class="hero-banner">
+                <div class="banner-content">
+                    <h2>Destaque-se entre os melhores!</h2>
+                    <p>Acompanhe sua evolução e compare seu desempenho com outros estudantes</p>
+                </div>
+            </section>
+
+            <section class="your-position-card">
+                <div class="position-header">
+                    <h3>📍 Sua Posição Atual</h3>
+                </div>
+                <div class="position-content" id="userPosition">
+                    <div class="position-rank">
+                        <span class="rank-number">-</span>
+                        <span class="rank-label">Posição</span>
                     </div>
-                    <div class="user-info">
-                        <span class="user-name">Leonardo Quispe Iola</span>
+                    <div class="position-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label">Pontos Totais</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label">Questões Resolvidas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">0%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </section>
 
-        <div class="page-content">
-            <div class="coming-soon">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-trophy"></i>
+            <section class="top-three-section">
+                <h2 class="section-title">🌟 Top 3 Estudantes</h2>
+                <div class="podium">
+                    <div class="podium-card second-place" id="rank2">
+                        <div class="podium-medal">🥈</div>
+                        <div class="podium-rank">#2</div>
+                        <div class="student-avatar">👤</div>
+                        <h3 class="student-name">...</h3>
+                        <div class="student-points">
+                            <span class="points-value">0</span>
+                            <span class="points-label">pontos</span>
+                        </div>
+                        <div class="student-badges">
+                            <span class="badge">🔥 Em chamas</span>
+                        </div>
+                    </div>
+
+                    <div class="podium-card first-place" id="rank1">
+                        <div class="podium-medal">🥇</div>
+                        <div class="podium-rank">#1</div>
+                        <div class="student-avatar champion">👤</div>
+                        <h3 class="student-name">...</h3>
+                        <div class="student-points">
+                            <span class="points-value">0</span>
+                            <span class="points-label">pontos</span>
+                        </div>
+                        <div class="student-badges">
+                            <span class="badge gold">👑 Campeão</span>
+                        </div>
+                    </div>
+
+                    <div class="podium-card third-place" id="rank3">
+                        <div class="podium-medal">🥉</div>
+                        <div class="podium-rank">#3</div>
+                        <div class="student-avatar">👤</div>
+                        <h3 class="student-name">...</h3>
+                        <div class="student-points">
+                            <span class="points-value">0</span>
+                            <span class="points-label">pontos</span>
+                        </div>
+                        <div class="student-badges">
+                            <span class="badge">⭐ Destaque</span>
+                        </div>
+                    </div>
                 </div>
-                <h2>Sistema de Ranking em Desenvolvimento</h2>
-                <p>Esta seção estará disponível em breve com o ranking dos estudantes.</p>
-            </div>
-        </div>
-    </main>
+            </section>
 
-    <script src="js/theme.js"></script>
+            <section class="ranking-section">
+                <div class="ranking-header">
+                    <h2 class="section-title">📊 Ranking Geral</h2>
+                    <div class="ranking-controls">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Procurar aluno..."
+                                class="search-input"
+                            >
+                        </div>
+                        <select id="sortSelect" class="sort-select">
+                            <option value="points">Ordenar por Pontos</option>
+                            <option value="accuracy">Ordenar por Taxa de Acerto</option>
+                            <option value="questions">Ordenar por Questões</option>
+                            <option value="name">Ordenar por Nome</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ranking-table">
+                    <div class="table-header">
+                        <div class="col-rank">Posição</div>
+                        <div class="col-student">Estudante</div>
+                        <div class="col-points">Pontos</div>
+                        <div class="col-questions">Questões</div>
+                        <div class="col-accuracy">Taxa de Acerto</div>
+                        <div class="col-badges">Badges</div>
+                    </div>
+                    <div class="table-body" id="rankingTableBody">
+                        <div class="loading-state">
+                            <div class="spinner"></div>
+                            <p>Carregando ranking...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="page-footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🎓</span>
+                        <span>REPT</span>
+                    </div>
+                    <p>&copy; 2024 REPT - Sua plataforma de estudos para o ENEM</p>
+                    <div class="footer-links">
+                        <a href="#">Sobre</a>
+                        <a href="#">Termos</a>
+                        <a href="#">Privacidade</a>
+                        <a href="#">Contato</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script type="module" src="js/ranking.js"></script>
 </body>
 </html>
