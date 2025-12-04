@@ -11,14 +11,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="dark-theme">
- 
-<!-- Sidebar -->
+    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
 <img src="Captura_de_tela_2025-10-02_010620-removebg-preview.png" alt="" class="logo">
             </div>
         </div>
-
         <nav class="sidebar-nav">
             <ul class="nav-list">
                 <li class="nav-item">
@@ -112,17 +110,200 @@
             </div>
         </header>
 
-        <div class="page-content">
-            <div class="coming-soon">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-question-circle"></i>
+        <div class="questoes-content">
+            <!-- Header -->
+            <section class="questoes-hero">
+                <h2>Questões — Pratique com questões comentadas</h2>
+                <p>Resolva questões do ENEM e vestibulares com explicações detalhadas</p>
+            </section>
+
+            <!-- Filtros -->
+            <section class="filtros-section">
+                <div class="filtros-container">
+                    <div class="filtros-row">
+                        <div class="filtro-group">
+                            <label for="disciplina">Disciplina</label>
+                            <select id="disciplina" class="filtro-select">
+                                <option value="todas">Todas</option>
+                                <option value="matematica">Matemática</option>
+                                <option value="portugues">Português</option>
+                                <option value="fisica">Física</option>
+                                <option value="quimica">Química</option>
+                                <option value="biologia">Biologia</option>
+                                <option value="historia">História</option>
+                                <option value="geografia">Geografia</option>
+                                <option value="filosofia">Filosofia</option>
+                                <option value="sociologia">Sociologia</option>
+                            </select>
+                        </div>
+                        <div class="filtro-group">
+                            <label for="ano">Ano</label>
+                            <select id="ano" class="filtro-select">
+                                <option value="todos">Todos</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                            </select>
+                        </div>
+                        <div class="filtro-group">
+                            <label for="tipo">Tipo</label>
+                            <select id="tipo" class="filtro-select">
+                                <option value="todos">Todos</option>
+                                <option value="enem">ENEM</option>
+                                <option value="vestibular">Vestibular</option>
+                                <option value="simulado">Simulado</option>
+                            </select>
+                        </div>
+                        <div class="filtro-group">
+                            <label for="dificuldade">Dificuldade</label>
+                            <select id="dificuldade" class="filtro-select">
+                                <option value="todas">Todas</option>
+                                <option value="facil">Fácil</option>
+                                <option value="medio">Médio</option>
+                                <option value="dificil">Difícil</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filtros-actions">
+                        <button id="aplicar-filtros" class="btn-primary">
+                            <i class="fas fa-filter"></i>
+                            Aplicar Filtros
+                        </button>
+                        <button id="limpar-filtros" class="btn-secondary">
+                            <i class="fas fa-times"></i>
+                            Limpar
+                        </button>
+                    </div>
                 </div>
-                <h2>Banco de Questões em Desenvolvimento</h2>
-                <p>Esta seção estará disponível em breve com milhares de questões organizadas.</p>
+            </section>
+
+            <!-- Estatísticas Rápidas -->
+            <section class="stats-section">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="questoes-respondidas">0</span>
+                            <span class="stat-label">Questões Hoje</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="taxa-acerto">0%</span>
+                            <span class="stat-label">Taxa de Acerto</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="tempo-medio">0min</span>
+                            <span class="stat-label">Tempo Médio</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="marcadas-revisar">0</span>
+                            <span class="stat-label">Para Revisar</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista de Questões -->
+            <section class="questoes-lista">
+                <div class="questoes-header">
+                    <h3>
+                        <i class="fas fa-list"></i>
+                        Questões Disponíveis
+                    </h3>
+                    <div class="questoes-count">
+                        <span id="total-questoes">0</span> questões encontradas
+                    </div>
+                </div>
+                <div class="questoes-grid" id="questoes-container">
+                    <!-- Questões serão inseridas dinamicamente -->
+                </div>
+                <div class="load-more-container">
+                    <button id="carregar-mais" class="btn-secondary">
+                        <i class="fas fa-plus"></i>
+                        Carregar Mais Questões
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modal de Resolução -->
+        <div id="questao-modal" class="modal">
+            <div class="modal-content questao-modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-questao-titulo">Questão</h3>
+                    <div class="modal-actions">
+                        <button id="timer-toggle" class="timer-btn">
+                            <i class="fas fa-clock"></i>
+                            <span id="timer-display">00:00</span>
+                        </button>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="questao-enunciado" id="questao-enunciado">
+                        <!-- Enunciado da questão -->
+                    </div>
+                    <div class="questao-alternativas" id="questao-alternativas">
+                        <!-- Alternativas -->
+                    </div>
+                    <div class="questao-actions">
+                        <button id="marcar-revisar" class="btn-secondary">
+                            <i class="fas fa-bookmark"></i>
+                            Marcar para Revisar
+                        </button>
+                        <button id="confirmar-resposta" class="btn-primary" disabled>
+                            <i class="fas fa-check"></i>
+                            Confirmar Resposta
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer" id="questao-resultado" style="display: none;">
+                    <div class="resultado-container">
+                        <div class="resultado-status">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resposta Correta!</span>
+                        </div>
+                        <div class="resultado-explicacao">
+                            <h4>Explicação:</h4>
+                            <p id="explicacao-texto"></p>
+                        </div>
+                        <div class="resultado-actions">
+                            <button id="proxima-questao" class="btn-primary">
+                                <i class="fas fa-arrow-right"></i>
+                                Próxima Questão
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!-- Toast de Notificação -->
+        <div id="toast" class="toast">
+            <i class="fas fa-check-circle"></i>
+            <span id="toast-message">Questão respondida!</span>
         </div>
     </main>
 
     <script src="js/theme.js"></script>
+    <script src="js/questoes.js"></script>
 </body>
 </html>
