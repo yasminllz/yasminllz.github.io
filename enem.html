@@ -11,13 +11,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="dark-theme">
- 
-<!-- Sidebar -->
-    <aside class="sidebar">
+    <!-- Sidebar -->
+     <aside class="sidebar">
         <div class="sidebar-header">
 <img src="Captura_de_tela_2025-10-02_010620-removebg-preview.png" alt="" class="logo">
             </div>
         </div>
+
 
         <nav class="sidebar-nav">
             <ul class="nav-list">
@@ -98,7 +98,7 @@
     <main class="main-content">
         <header class="main-header">
             <div class="header-left">
-                <h1>ENEM</h1>
+                <h1>ENEM — Provas, Competências e Guias de Estudo 📘</h1>
             </div>
             <div class="header-right">
                 <div class="user-profile">
@@ -112,17 +112,319 @@
             </div>
         </header>
 
-        <div class="page-content">
-            <div class="coming-soon">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-book"></i>
+        <div class="enem-content">
+            <!-- Hero Section -->
+            <section class="enem-hero">
+                <h2>Central ENEM</h2>
+                <p>Tudo que você precisa para se preparar para o Exame Nacional do Ensino Médio</p>
+            </section>
+
+            <!-- Provas Anteriores -->
+            <section class="provas-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-file-alt"></i>
+                        Provas Anteriores do ENEM
+                    </h3>
+                    <div class="filter-controls">
+                        <select id="year-filter" class="year-filter">
+                            <option value="all">Todos os anos</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
                 </div>
-                <h2>Seção ENEM em Desenvolvimento</h2>
-                <p>Esta seção estará disponível em breve com todo o conteúdo do ENEM.</p>
-            </div>
+                <div class="provas-grid">
+                    <div class="prova-card" data-year="2023">
+                        <div class="prova-year">2023</div>
+                        <h4>ENEM 2023</h4>
+                        <p>Tema da redação: "Desafios da educação inclusiva no Brasil"</p>
+                        <div class="prova-stats">
+                            <span><i class="fas fa-users"></i> 3,9 milhões de inscritos</span>
+                            <span><i class="fas fa-chart-line"></i> Dificuldade: Média</span>
+                        </div>
+                        <button class="btn-ver-detalhes" data-year="2023">
+                            <i class="fas fa-eye"></i>
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                    <div class="prova-card" data-year="2022">
+                        <div class="prova-year">2022</div>
+                        <h4>ENEM 2022</h4>
+                        <p>Tema da redação: "Desafios para o enfrentamento da invisibilidade do trabalho de cuidado"</p>
+                        <div class="prova-stats">
+                            <span><i class="fas fa-users"></i> 3,4 milhões de inscritos</span>
+                            <span><i class="fas fa-chart-line"></i> Dificuldade: Alta</span>
+                        </div>
+                        <button class="btn-ver-detalhes" data-year="2022">
+                            <i class="fas fa-eye"></i>
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                    <div class="prova-card" data-year="2021">
+                        <div class="prova-year">2021</div>
+                        <h4>ENEM 2021</h4>
+                        <p>Tema da redação: "Invisibilidade e registro civil: garantia de acesso à cidadania"</p>
+                        <div class="prova-stats">
+                            <span><i class="fas fa-users"></i> 3,1 milhões de inscritos</span>
+                            <span><i class="fas fa-chart-line"></i> Dificuldade: Média</span>
+                        </div>
+                        <button class="btn-ver-detalhes" data-year="2021">
+                            <i class="fas fa-eye"></i>
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                    <div class="prova-card" data-year="2020">
+                        <div class="prova-year">2020</div>
+                        <h4>ENEM 2020</h4>
+                        <p>Tema da redação: "O estigma associado às doenças mentais na sociedade brasileira"</p>
+                        <div class="prova-stats">
+                            <span><i class="fas fa-users"></i> 5,8 milhões de inscritos</span>
+                            <span><i class="fas fa-chart-line"></i> Dificuldade: Alta</span>
+                        </div>
+                        <button class="btn-ver-detalhes" data-year="2020">
+                            <i class="fas fa-eye"></i>
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                    <div class="prova-card" data-year="2019">
+                        <div class="prova-year">2019</div>
+                        <h4>ENEM 2019</h4>
+                        <p>Tema da redação: "Democratização do acesso ao cinema no Brasil"</p>
+                        <div class="prova-stats">
+                            <span><i class="fas fa-users"></i> 5,1 milhões de inscritos</span>
+                            <span><i class="fas fa-chart-line"></i> Dificuldade: Média</span>
+                        </div>
+                        <button class="btn-ver-detalhes" data-year="2019">
+                            <i class="fas fa-eye"></i>
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competências e Habilidades -->
+            <section class="competencias-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-graduation-cap"></i>
+                        Competências e Habilidades
+                    </h3>
+                </div>
+                <div class="competencias-grid">
+                    <div class="competencia-card">
+                        <div class="competencia-number">1</div>
+                        <h4>Linguagens, Códigos e suas Tecnologias</h4>
+                        <ul>
+                            <li>Interpretação de textos</li>
+                            <li>Literatura brasileira e portuguesa</li>
+                            <li>Gramática e linguística</li>
+                            <li>Língua estrangeira (inglês/espanhol)</li>
+                            <li>Artes e educação física</li>
+                        </ul>
+                    </div>
+
+                    <div class="competencia-card">
+                        <div class="competencia-number">2</div>
+                        <h4>Matemática e suas Tecnologias</h4>
+                        <ul>
+                            <li>Álgebra e funções</li>
+                            <li>Geometria plana e espacial</li>
+                            <li>Estatística e probabilidade</li>
+                            <li>Matemática financeira</li>
+                            <li>Trigonometria</li>
+                        </ul>
+                    </div>
+
+                    <div class="competencia-card">
+                        <div class="competencia-number">3</div>
+                        <h4>Ciências da Natureza e suas Tecnologias</h4>
+                        <ul>
+                            <li>Física: mecânica, termodinâmica, eletricidade</li>
+                            <li>Química: orgânica, inorgânica, físico-química</li>
+                            <li>Biologia: genética, ecologia, fisiologia</li>
+                            <li>Meio ambiente e sustentabilidade</li>
+                            <li>Tecnologia e inovação</li>
+                        </ul>
+                    </div>
+
+                    <div class="competencia-card">
+                        <div class="competencia-number">4</div>
+                        <h4>Ciências Humanas e suas Tecnologias</h4>
+                        <ul>
+                            <li>História do Brasil e mundial</li>
+                            <li>Geografia física e humana</li>
+                            <li>Filosofia e sociologia</li>
+                            <li>Política e cidadania</li>
+                            <li>Movimentos sociais</li>
+                        </ul>
+                    </div>
+
+                    <div class="competencia-card">
+                        <div class="competencia-number">5</div>
+                        <h4>Redação</h4>
+                        <ul>
+                            <li>Texto dissertativo-argumentativo</li>
+                            <li>Domínio da norma culta</li>
+                            <li>Compreensão da proposta</li>
+                            <li>Argumentação consistente</li>
+                            <li>Proposta de intervenção</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orientações do ENEM -->
+            <section class="orientacoes-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-info-circle"></i>
+                        Orientações do ENEM
+                    </h3>
+                </div>
+                <div class="orientacoes-grid">
+                    <div class="orientacao-card">
+                        <div class="orientacao-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4>Inscrições</h4>
+                        <p>Período: Maio a Junho<br>
+                        Taxa: R$ 85,00<br>
+                        Isenção disponível para baixa renda</p>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <div class="orientacao-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Datas Importantes</h4>
+                        <p>1º dia: Linguagens e Ciências Humanas + Redação<br>
+                        2º dia: Matemática e Ciências da Natureza<br>
+                        Duração: 5h30 (1º dia) e 5h (2º dia)</p>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <div class="orientacao-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Sistema TRI</h4>
+                        <p>Teoria de Resposta ao Item<br>
+                        Questões têm pesos diferentes<br>
+                        Coerência nas respostas é importante</p>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <div class="orientacao-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h4>Documentos</h4>
+                        <p>RG, CNH ou Passaporte<br>
+                        Cartão de confirmação<br>
+                        Caneta esferográfica preta</p>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <div class="orientacao-icon">
+                            <i class="fas fa-backpack"></i>
+                        </div>
+                        <h4>O que levar</h4>
+                        <p>Lanche e água em embalagem transparente<br>
+                        Medicamentos (se necessário)<br>
+                        Régua transparente</p>
+                    </div>
+
+                    <div class="orientacao-card">
+                        <div class="orientacao-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h4>Itens Proibidos</h4>
+                        <p>Celular, smartwatch, calculadora<br>
+                        Óculos escuros, boné, chapéu<br>
+                        Lápis, lapiseira, borracha</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navegação para outras áreas -->
+            <section class="navegacao-section">
+                <div class="section-header">
+                    <h3>
+                        <i class="fas fa-arrow-right"></i>
+                        Continue seus estudos
+                    </h3>
+                </div>
+                <div class="navegacao-cards">
+                    <a href="questoes.html" class="nav-card">
+                        <div class="nav-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h4>Praticar Questões</h4>
+                        <p>Resolva questões do ENEM e vestibulares com explicações detalhadas</p>
+                        <span class="nav-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+
+                    <a href="redacao.html" class="nav-card">
+                        <div class="nav-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <h4>Treinar Redação</h4>
+                        <p>Pratique redações com temas do ENEM e receba dicas de escrita</p>
+                        <span class="nav-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+
+                    <a href="desempenho.html" class="nav-card">
+                        <div class="nav-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Ver Desempenho</h4>
+                        <p>Acompanhe seu progresso e identifique pontos de melhoria</p>
+                        <span class="nav-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </section>
         </div>
     </main>
 
+    <!-- Modal de Detalhes da Prova -->
+    <div id="prova-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Detalhes da Prova</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Conteúdo será inserido dinamicamente -->
+            </div>
+            <div class="modal-footer">
+                <button id="download-pdf" class="btn-download">
+                    <i class="fas fa-download"></i>
+                    Baixar PDF
+                </button>
+                <button class="modal-close btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de Notificação -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Ação realizada com sucesso!</span>
+    </div>
+
     <script src="js/theme.js"></script>
+    <script src="js/enem.js"></script>
 </body>
 </html>
